@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "Security Group Auditing"
 date: 2016-05-22
 ---
