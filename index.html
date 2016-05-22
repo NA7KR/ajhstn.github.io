@@ -2,4 +2,11 @@
 layout: default
 title: title 1
 ---
-hello
+
+Hi.  Here i share PowerShell scrpits that i have put together for various works.
+<ul class="posts">
+
+    {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
