@@ -1,6 +1,6 @@
 # Author: Andrew Huddleston
 # 2016
-# Description: http://ajhstn.github.io/2016/05/22/SecurityGroup-Auditing
+# Description: http://ajhstn.github.io/SecurityGroup-Auditing
 
 # This first block is the XML query used to run against the eventlog.  This type of XML query can easily be created in the Windows EventViewer, by creating a custom view, then switching to the XML Tab, and copy the code. 
 $xmlquery = @'
