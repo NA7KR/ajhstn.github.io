@@ -1,3 +1,7 @@
+# Author: Andrew Huddleston
+# 2016
+# Description: http://ajhstn.github.io/blog/2016/05/22/SecurityGroup-Auditing
+
 $xmlquery = @'
 <QueryList>
   <Query Id="0" Path="Security">
