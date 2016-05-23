@@ -18,7 +18,7 @@ This script produces an HTML email.
 
 ## The Code
 This first block is the XML query used to run against the eventlog.  This type of XML query can easily be created in the Windows EventViewer, by creating a custom view, then switching to the XML Tab, and copy the code. 
-````
+```
 $xmlquery = @'
 <QueryList>
   <Query Id="0" Path="Security">
@@ -26,20 +26,20 @@ $xmlquery = @'
   </Query>
 </QueryList>
 '@
-````
+```
 This stores all of our domain controllers in $dcs
-````
+```
 $domain = [System.DirectoryServices.ActiveDirectory.Domain]::getcurrentdomain()
 $dcs = ($domain.DomainControllers).Name
-````
+```
 This loops throuh each domain controller, and stores all matching events in $events
-````
+```
 $events = foreach ($dc in $dcs) {
     Get-WinEvent -ComputerName $dc -ErrorAction:SilentlyContinue -FilterXml $xmlquery
 }
-````
+```
 This loops through the events and extracts out the details we want to collect, namely what happened, by who, when and where.
-````
+```
 $report = foreach($event in $events)
 {
     if ($event.Properties -ne $null)
@@ -74,13 +74,13 @@ $report = foreach($event in $events)
 		}
     }
 }
-````
+```
 At this point we have the full report saved in the $report variable.  This could easily be output to the screen if you so desire.  Because it is a PSObject you can also futher filter, sort, select etc.
 
 If you want to continue and produce an HTML email lets go.
 
 This sets up a basic mobile friendly html email skeleton.
-````
+```
 $html =@'
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html
@@ -118,9 +118,9 @@ This reports changes made to security groups.
 #body
 </body>
 '@
-````
+```
 Here we set some of the email configuration and parmeters.
-````
+```
 $subject = "Security Group Auditing"
 $date = (Get-Date -Format "yyyy-MM-dd")
 $handle = $subject -replace '\s'
@@ -133,11 +133,10 @@ $html = $html.Replace('#file', $file)
 
 # If you want to save this to a html file, uncomment below.
 $html | Out-File c:\AuditReports\$file -Force
-
-````
+```
 Here we sent the email with the html body we created above.
-````
+```
 Send-MailMessage -SmtpServer 'your mail server' -From 'Security Auditing <no-reply@domain.com>' -to 'securityauditing@domain.com' -Subject $subject -BodyAsHtml -Body $html
-````
+```
 
 See the full <a href="https://github.com/ajhstn/ajhstn.github.io/blob/master/ps/Get-SecurityGroupAuditing.ps">code</a> on GitHub.
