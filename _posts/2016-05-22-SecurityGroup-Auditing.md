@@ -148,4 +148,4 @@ Here we sent the email with the html body we created above.
 Send-MailMessage -SmtpServer 'your mail server' -From 'Security Auditing <no-reply@domain.com>' -to 'securityauditing@domain.com' -Subject $subject -BodyAsHtml -Body $html
 ```
 
-See the full <a href="https://github.com/ajhstn/ajhstn.github.io/blob/master/ps/Get-SecurityGroupAuditing.ps">code</a> on GitHub.
+See the full <a href="https://github.com/ajhstn/ajhstn.github.io/blob/master/ps/Get-SecurityGroupAuditing.ps1">code</a> on GitHub.
