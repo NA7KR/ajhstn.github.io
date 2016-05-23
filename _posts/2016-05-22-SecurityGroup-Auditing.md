@@ -27,17 +27,20 @@ $xmlquery = @'
 </QueryList>
 '@
 ```
+
 This stores all of our domain controllers in $dcs
 ```powershell
 $domain = [System.DirectoryServices.ActiveDirectory.Domain]::getcurrentdomain()
 $dcs = ($domain.DomainControllers).Name
 ```
+
 This loops throuh each domain controller, and stores all matching events in $events
 ```powershell
 $events = foreach ($dc in $dcs) {
     Get-WinEvent -ComputerName $dc -ErrorAction:SilentlyContinue -FilterXml $xmlquery
 }
 ```
+
 This loops through the events and extracts out the details we want to collect, namely what happened, by who, when and where, and builds a PSCustomObject.
 ```powershell
 $report = foreach($event in $events)
