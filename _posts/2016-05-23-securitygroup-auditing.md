@@ -16,7 +16,7 @@ In this script we will query all of our domain controllers for security events i
 ## Script Output
 This script produces an HTML email.
 
-![screen shot of resulting email]({{ site.url }}/assets/gsga-small.png)
+![screen shot of resulting email]({{ site.url }}/assets/gsgasmall.png)
 
 ## The Code
 This first block is the XML query used to run against the eventlog.  This type of XML query can easily be created in the Windows EventViewer, by creating a custom view, then switching to the XML Tab, and copy the code. 
