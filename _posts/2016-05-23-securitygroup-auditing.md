@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: "Security Group Auditing"
-date: 2016-05-00
+date: 2016-05-23
 ---
 
 In this script we will query all of our domain controllers for security events in the security log.
