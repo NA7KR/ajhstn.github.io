@@ -53,7 +53,6 @@ $report = foreach($event in $events)
 		}
     }
 }
-$report
 
 $html =@'
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -105,7 +104,6 @@ $html = $html.Replace('#file', $file)
 
 # If you want to save this to a html file, uncomment below.
 $html | Out-File c:\AuditReports\$file -Force
-
 
 Send-MailMessage -SmtpServer 'your mail server' -From 'Security Auditing <no-reply@domain.com>' -to 'securityauditing@domain.com' -Subject $subject -BodyAsHtml -Body $html
 
