@@ -6,5 +6,6 @@ title: ajhstn's code
 <h3>Here i share PowerShell script that i have put together over time during my days in system/infrastructure engineering.</h3>
 
 {% for post in site.posts %}
-<p><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></p>
+<p><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+<br />{{page.excerpt}}</p>
 {% endfor %}
