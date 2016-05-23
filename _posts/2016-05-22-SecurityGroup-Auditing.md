@@ -38,7 +38,7 @@ $events = foreach ($dc in $dcs) {
     Get-WinEvent -ComputerName $dc -ErrorAction:SilentlyContinue -FilterXml $xmlquery
 }
 ```
-This loops through the events and extracts out the details we want to collect, namely what happened, by who, when and where.
+This loops through the events and extracts out the details we want to collect, namely what happened, by who, when and where, and builds a PSCustomObject.
 ```powershell
 $report = foreach($event in $events)
 {
