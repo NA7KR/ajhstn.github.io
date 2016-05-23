@@ -10,4 +10,5 @@ I fit into the group of "beginner++" coders, my point being, i encourage your fe
 
 {% for post in site.posts %}
 {{ post.date | date: "%Y/%m" }} >> [{{ post.title }}]({{ post.url }})
+{{ post.excerpt }}
 {% endfor %}
