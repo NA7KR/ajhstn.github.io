@@ -9,5 +9,5 @@ Here i share PowerShell script that i have put together over time during my days
 I fit into the group of "beginner++" coders, my point being, i encourage your feedback and comments.
 
 {% for post in site.posts %}
-{{post.date | date_to_string}} >> [{{ post.title }}]({{ post.url }})
+{{ post.date | date: "%Y/%m" }} >> [{{ post.title }}]({{ post.url }})
 {% endfor %}
