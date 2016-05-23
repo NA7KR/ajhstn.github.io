@@ -18,14 +18,12 @@ This script produces an HTML email.
 
 ## The Code
 This first block is the XML query used to run against the eventlog.  This type of XML query can easily be created in the Windows EventViewer, by creating a custom view, then switching to the XML Tab, and copy the code. 
-```powershell
-$xmlquery = @'
+```
 <QueryList>
   <Query Id="0" Path="Security">
     <Select Path="Security">*[System[Provider[@Name='Microsoft-Windows-Security-Auditing'] and (EventID=4727 or EventID=4728 or EventID=4729 or EventID=4730 or EventID=4731 or EventID=4732 or EventID=4733 or EventID=4734 or EventID=4735 or EventID=4737 or EventID=4754 or EventID=4755 or EventID=4756 or EventID=4757 or EventID=4758 or EventID=4764) and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]</Select>
   </Query>
 </QueryList>
-'@
 ```
 
 This stores all of our domain controllers in $dcs
@@ -83,8 +81,7 @@ At this point we have the full report saved in the $report variable.  This could
 If you want to continue and produce an HTML email lets go.
 
 This sets up a basic mobile friendly html email skeleton.
-```powershell
-$html =@'
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html
 xmlns="http://www.w3.org/1999/xhtml"> <head> <meta name="viewport"
@@ -120,7 +117,6 @@ This reports changes made to security groups.
 #summary
 #body
 </body>
-'@
 ```
 Here we set some of the email configuration and parmeters.
 ```powershell
