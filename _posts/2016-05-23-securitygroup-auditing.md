@@ -4,6 +4,7 @@ title: "Security Group Auditing"
 date: 2016-05-23
 tags: 'security auditing'
 excertp: "In this script we will query all of our domain controllers for security events in the security log."
+comments: true
 ---
 
 In this script we will query all of our domain controllers for security events in the security log.
@@ -19,7 +20,7 @@ This script produces an HTML email.
 ![screen shot of resulting email]({{ site.url }}/assets/gsgasmall.png)
 
 ## The Code
-This first block is the XML query used to run against the eventlog.  This type of XML query can easily be created in the Windows EventViewer, by creating a custom view, then switching to the XML Tab, and copy the code. 
+This first block is the XML query used to run against the eventlog.  This type of XML query can easily be created in the Windows EventViewer, by creating a custom view, then switching to the XML Tab, and copy the code.
 
 ```
 $xmlquery = <QueryList>
@@ -154,3 +155,5 @@ See the full <a href="https://github.com/ajhstn/ajhstn.github.io/blob/master/ps/
 
 ## Next Steps
 I have set this up as a daily scheduled task.
+
+## Comments and Feedback Welcome
