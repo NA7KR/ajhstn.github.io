@@ -7,7 +7,7 @@ excertp: "In this script we will query all of our domain controllers for securit
 comments: true
 ---
 
-In this script we will query all of our domain controllers for security events in the security log.
+In this script we will query all of our domain controllers for security events in the security log, relating to changes made to Active Directory security groups.  For example group memberships added, removed etc.  Then we will produce a mobile friendly HTML formatted email and send.
 
 ## Prerequisites
 * You need permissions to do PowerShell remoting, and query your domain controller event logs.
