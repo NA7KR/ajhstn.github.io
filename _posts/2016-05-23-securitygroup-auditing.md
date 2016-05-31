@@ -154,6 +154,6 @@ Send-MailMessage -SmtpServer 'your mail server' -From 'Security Auditing <no-rep
 See the full <a href="https://github.com/ajhstn/ajhstn.github.io/blob/master/ps/Get-SecurityGroupAuditing.ps1">code</a> on GitHub.
 
 ## Next Steps
-I have set this up as a daily scheduled task.
+The way i use this is with a schedule task that runs each morning.
 
 ## Comments and Feedback Welcome
