@@ -7,7 +7,7 @@ excertp: "In this script we will query all of our domain controllers for securit
 comments: true
 ---
 
-In this script we will query all of our domain controllers for security events in the security log.
+In this script we will query all of our domain controllers for security events in the security log, relating to changes made to Active Directory security groups.  For example group memberships added, removed etc.  Then we will produce a mobile friendly HTML formatted email and send.
 
 ## Prerequisites
 * You need permissions to do PowerShell remoting, and query your domain controller event logs.
@@ -20,7 +20,7 @@ This script produces an HTML email.
 ![screen shot of resulting email]({{ site.url }}/assets/gsgasmall.png)
 
 ## The Code
-This first block is the XML query used to run against the eventlog.  This type of XML query can easily be created in the Windows EventViewer, by creating a custom view, then switching to the XML Tab, and copy the code. 
+This first block is the XML query used to run against the eventlog.  This type of XML query can easily be created in the Windows EventViewer, by creating a custom view, then switching to the XML Tab, and copy the code.
 
 ```
 $xmlquery = <QueryList>
@@ -154,4 +154,6 @@ Send-MailMessage -SmtpServer 'your mail server' -From 'Security Auditing <no-rep
 See the full <a href="https://github.com/ajhstn/ajhstn.github.io/blob/master/ps/Get-SecurityGroupAuditing.ps1">code</a> on GitHub.
 
 ## Next Steps
-I have set this up as a daily scheduled task.
+The way i use this is with a schedule task that runs each morning.
+
+## Comments and Feedback Welcome
