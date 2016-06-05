@@ -1,3 +1,6 @@
 name: andrew
 permalink: none
 url: https://ajhstn.github.io
+markdown: redcarpet 
+redcarpet:   
+  extensions: ["strikethrough"] 

@@ -10,6 +10,8 @@ I fit into the group of "beginner++" coders, my point being, i encourage your fe
 
 ### Posts
 {% for post in site.posts %}
-{{ post.date | date: "%Y/%m" }} >> [{{ post.title }}]({{ post.url }})
+{{ post.date | date: "%Y/%B" }} >> [{{ post.title }}]({{ post.url }})
 {{ post.excerpt }}
 {% endfor %}
+
+
