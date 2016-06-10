@@ -24,7 +24,7 @@ I also have other similar scripts to audit Account Management, Windows Event Ale
 ## Script Output
 This script produces an HTML email.
 
-![screen shot of resulting email]({{ site.url }}/assets/gsgasmall.png)
+![screen shot of resulting email](/img/gsga.PNG)
 
 ## The Code
 This first block is the XML query used to run against the eventlog.  This type of XML query can easily be created in the Windows EventViewer, by creating a custom view, then switching to the XML Tab, and copy the code.
