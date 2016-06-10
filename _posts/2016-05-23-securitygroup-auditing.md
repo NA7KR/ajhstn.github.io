@@ -1,13 +1,20 @@
 ---
 layout: post
-title: "Security Group Auditing"
-date: 2016-05-23
+title: "Security Group Auditing with PowerShell"
 tags: 'security auditing'
+categories: security auditing
 excertp: "In this script we will query all of our domain controllers for security events in the security log."
 comments: true
 ---
 
 In this script we will query all of our domain controllers for security events in the security log, relating to changes made to Active Directory security groups.  For example group memberships added, removed etc.  Then we will produce a mobile friendly HTML formatted email and send.
+
+## Get the Code
+For those of you who want to go [strait to the code][Get-SecurityGroupAuditing].
+
+[Get-SecurityGroupAuditing]: https://github.com/ajhstn/ajhstn.github.io/blob/master/ps/Get-SecurityGroupAuditing.ps1
+
+I also have other similar scripts to audit Account Management, Windows Event Alerts etc, so let me know if you want them.
 
 ## Prerequisites
 * You need permissions to do PowerShell remoting, and query your domain controller event logs.
@@ -135,7 +142,11 @@ $subject = "Security Group Auditing"
 $date = (Get-Date -Format "yyyy-MM-dd")
 $handle = $subject -replace '\s'
 $file = $date + "-" + $handle +".html"
-$summary = $report | Group-Object EventName | Sort-Object Count -Descending | Select-Object Name,Count | ConvertTo-Html -Fragment -PreContent "<h1>Summary</h1>"
+$summary = $report | 
+    Group-Object EventName | 
+        Sort-Object Count -Descending | 
+            Select-Object Name,Count | 
+                ConvertTo-Html -Fragment -PreContent "<h1>Summary</h1>"
 $body = $report | ConvertTo-Html -Fragment -PreContent "<h1>Details</h1>"
 $html = $html.Replace('#summary', $summary)
 $html = $html.Replace('#body', $body)
@@ -151,9 +162,5 @@ Here we sent the email with the html body we created above.
 Send-MailMessage -SmtpServer 'your mail server' -From 'Security Auditing <no-reply@domain.com>' -to 'securityauditing@domain.com' -Subject $subject -BodyAsHtml -Body $html
 ```
 
-See the full <a href="https://github.com/ajhstn/ajhstn.github.io/blob/master/ps/Get-SecurityGroupAuditing.ps1">code</a> on GitHub.
-
 ## Next Steps
 The way i use this is with a schedule task that runs each morning.
-
-## Comments and Feedback Welcome
