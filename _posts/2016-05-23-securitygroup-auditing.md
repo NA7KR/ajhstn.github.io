@@ -7,7 +7,7 @@ excertp: "In this script we will query all of our domain controllers for securit
 nocomments: true
 ---
 
-In this script we will query all of our domain controllers for security events in the security log, relating to changes made to Active Directory security groups.  For example group memberships added, removed etc.  Then we will produce a mobile friendly HTML formatted email and send.
+In this script we will query all of our domain controllers for security events in the security log for the previous 24 hours, relating to changes made to Active Directory security groups.  For example group memberships added, removed etc.  Then we will produce a mobile friendly HTML formatted email and send.
 
 ## Get the Code
 For those of you who want to go [strait to the code][Get-SecurityGroupAuditing].
@@ -138,9 +138,6 @@ Here we set some of the email configuration and parmeters.
 
 ```powershell
 $subject = "Security Group Auditing"
-$date = (Get-Date -Format "yyyy-MM-dd")
-$handle = $subject -replace '\s'
-$file = $date + "-" + $handle +".html"
 $summary = $report | 
     Group-Object EventName | 
         Sort-Object Count -Descending | 
@@ -149,13 +146,8 @@ $summary = $report |
 $body = $report | ConvertTo-Html -Fragment -PreContent "<h1>Details</h1>"
 $html = $html.Replace('#summary', $summary)
 $html = $html.Replace('#body', $body)
-$html = $html.Replace('#file', $file)
 
-# If you want to save this to a html file, uncomment below.
-$html | Out-File c:\AuditReports\$file -Force
-```
-
-Here we sent the email with the html body we created above.
+Here we send the email with the html body we created above.
 
 ```powershell
 Send-MailMessage -SmtpServer 'your mail server' -From 'Security Auditing <no-reply@domain.com>' -to 'securityauditing@domain.com' -Subject $subject -BodyAsHtml -Body $html
