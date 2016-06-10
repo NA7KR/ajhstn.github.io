@@ -92,7 +92,7 @@ $report = foreach($event in $events)
 ```
 At this point we have the full report saved in the $report variable.  This could easily be output to the screen if you so desire.  Because it is a PSObject you can also futher filter, sort, select etc.
 
-If you want to continue and produce an HTML email lets go.
+If you want to continue and produce an HTML email, keep reading.
 
 This sets up a basic mobile friendly html email skeleton.
 
