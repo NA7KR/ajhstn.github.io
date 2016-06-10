@@ -4,7 +4,7 @@ title: "Security Group Auditing with PowerShell"
 tags: 'security auditing'
 categories: security auditing
 excertp: "In this script we will query all of our domain controllers for security events in the security log."
-comments: true
+nocomments: true
 ---
 
 In this script we will query all of our domain controllers for security events in the security log, relating to changes made to Active Directory security groups.  For example group memberships added, removed etc.  Then we will produce a mobile friendly HTML formatted email and send.
@@ -97,12 +97,11 @@ If you want to continue and produce an HTML email, keep reading.
 This sets up a basic mobile friendly html email skeleton.
 
 ```powershell
-$html = @'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html
-xmlns="http://www.w3.org/1999/xhtml"> <head> <meta name="viewport"
-content="width=device-width" />
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+$html = @'
+<!DOCTYPE html>
+ <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type='text/css'>
 table {
     border-collapse: collapse;
