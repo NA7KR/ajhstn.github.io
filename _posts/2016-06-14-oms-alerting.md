@@ -92,4 +92,4 @@ Gotchas:  One problem i came across was some of the values that the fields retur
 
 Here is the end result of an alert in OMS being sent to my slack channel using a custom JSON payload.
 
-![OMS-bad-password-alert](/img/oms-bad-password.png)
+![OMS-bad-password-alert](/img/oms-bad-password.PNG)
