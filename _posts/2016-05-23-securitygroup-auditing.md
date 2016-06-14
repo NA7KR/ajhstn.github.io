@@ -4,7 +4,6 @@ title: "Security Group Auditing with PowerShell"
 tags: 'security auditing'
 categories: security auditing
 excertp: "In this script we will query all of our domain controllers for security events in the security log."
-nocomments: true
 ---
 
 In this script we will query all of our domain controllers for security events in the security log for the previous 24 hours, relating to changes made to Active Directory security groups.  For example group memberships added, removed etc.  Then we will produce a mobile friendly HTML formatted email and send.
@@ -138,10 +137,10 @@ Here we set some of the email configuration and parmeters.
 
 ```powershell
 $subject = "Security Group Auditing"
-$summary = $report | 
-    Group-Object EventName | 
-        Sort-Object Count -Descending | 
-            Select-Object Name,Count | 
+$summary = $report |
+    Group-Object EventName |
+        Sort-Object Count -Descending |
+            Select-Object Name,Count |
                 ConvertTo-Html -Fragment -PreContent "<h1>Summary</h1>"
 $body = $report | ConvertTo-Html -Fragment -PreContent "<h1>Details</h1>"
 $html = $html.Replace('#summary', $summary)

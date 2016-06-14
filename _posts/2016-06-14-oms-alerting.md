@@ -1,7 +1,6 @@
 ---
 layout: post
 title: OMS Webhook Alerting
-comments: true
 categories: OMS
 ---
 Today i started experimenting with the webhooks alert feature inside Operations Management Suite.

@@ -2,7 +2,6 @@
 layout: post
 title:  "The Anonymous Print Server"
 categories: print
-comments: true
 ---
 
 We are hosting a conference offiste, and one of our requirements is to allow guest printing.  We hire in computers which need to be configured for easy printing, and we dont want to bind each machine to our domain.
@@ -10,7 +9,7 @@ We are hosting a conference offiste, and one of our requirements is to allow gue
 In this post i will setup a Windows Server 2012 R2 Print Server to allow for this.
 
 # Install OS
-Firstly prepare your windows server and install your OS.  This can be a virtual or physical machine. 
+Firstly prepare your windows server and install your OS.  This can be a virtual or physical machine.
 One thing here to note, you should choose an appropriate/easy name as it will be the endpoint your users use.  In my case the fqdn will be 'print.domain.com'.
 # Install Print Services Role
 Here we will install the print services roles and software we need to turn this machine into a print server.
@@ -33,7 +32,7 @@ Display Name                                            Name                    
 This is cool because now i can clearly see the correct names of which roles i may need to install.
 Now that i know the name of the role i will run command `Install-WindowsFeature print-services -IncludeManagementTools`.  This will install the necessary "print-services" roles and also the management tools.
 
-Alternatively if you prefer using Server Manger, open that up, click through and select the **"Print and Document Services"** role, and finish the wizard off clicking OK as you go. 
+Alternatively if you prefer using Server Manger, open that up, click through and select the **"Print and Document Services"** role, and finish the wizard off clicking OK as you go.
 
 # Configure Security
 We now have the print services installed and now we need to allow anonymous access to the server and printer shares.
