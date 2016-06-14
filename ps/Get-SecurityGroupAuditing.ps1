@@ -102,4 +102,3 @@ $html = $html.Replace('#file', $file)
 Send-MailMessage -SmtpServer 'smtp.domain.com' -From 'Security Auditing <no-reply@domain.com>' -to 'securityauditing@domain.com' -Subject $subject -BodyAsHtml -Body $html
 
 }
-
