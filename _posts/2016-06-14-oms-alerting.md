@@ -89,3 +89,7 @@ Gotchas:  One problem i came across was some of the values that the fields retur
 1. All fields MUST be in lowercase to expand.
 2. Field "#resultcount" is not recognised, "#searchresultcount" must be used instead.
 3. Field "#alertthresholdvalue" is not recognised, "#thresholdvalue" must be used instead.
+
+Here is the end result of an alert in OMS being sent to my slack channel using a custom JSON payload.
+
+![OMS-bad-password-alert](/img/oms-bad-password.png)
