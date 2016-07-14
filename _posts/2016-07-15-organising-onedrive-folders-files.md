@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Organising OneDrive Folders/Files
+title: Organising OneDrive Files/Folders
 category: onedrive
 ---
 Recent I begun organising my onedrive documents by year/project, then using selective sync, only keeping my current projects on my computer, leaving finished projects and irregularly used documents in onedrive alone.  When i am finished with a project or folder tree, i can simply unselect it in OneDrive Sync tool settings.
