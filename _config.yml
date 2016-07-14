@@ -14,3 +14,4 @@ github_username:  ajhstn
 # Build settings
 markdown: kramdown
 permalink: none
+timezone: Australia/Sydney
