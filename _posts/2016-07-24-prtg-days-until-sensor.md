@@ -6,7 +6,7 @@ This sensor will return a simple digit counter of days remaining from the curren
 
 You may want to use this sensor as a countdown to an important date, eg conference, project deadline etc..
 
-This sensor is a [EXE/Script](https://www.paessler.com/manuals/prtg/exe_script_sensor) PowerShell script sensor, and so we need to write a PowerShell script and save it to "\Custom Sensors\EXE\" in your PRTG installation folder.
+This sensor is an [EXE/Script](https://www.paessler.com/manuals/prtg/exe_script_sensor) PowerShell script sensor, and so we need to write a PowerShell script and save it to "\Custom Sensors\EXE\" in your PRTG installation folder.
 
 Copy and Paste the script below to the location "\Custom Sensors\EXE\DaysUntil.ps1".  
 
@@ -56,21 +56,21 @@ Here is a sample shot of it working, and you can see that i have 160 days before
 
 ![Days Until Sensor Screen Shot](img/prtg-daysuntil-160.PNG)
 
-## limits
+## Limits
 You may wish to enable limits on your sensor to alert you once you hit a certain threshold.
 
 Eg, i have enabled a 14 day warning, so that when i have less than 14 days before i hit my date, prtg will begin to notify and warn me.
 
-![Days Until Sensor Screen Shot](/img/prtg-daysuntil-belowlimits.png)
+![Days Until Sensor Screen Shot](img/prtg-daysuntil-belowlimits.PNG)
 
 ## Sensor output
 If you enter a date in a bad format eg 32/01/2020 the script will write an error.
 
-![Days Until Sensor Screen Shot](/img/prtg-daysuntil-badformat.jpg)
+![Days Until Sensor Screen Shot](img/prtg-daysuntil-badformat.JPG)
 
 If you provide a date in the past, you will receive a warning.
 
-![Days Until Sensor Days Passed](/img/prtg-daysuntil-dayspassed.jpg)
+![Days Until Sensor Days Passed](img/prtg-daysuntil-dayspassed.JPG)
 
 ### One last thing
 If you are wondering,  YES YOU CAN!!, you can write other scripts also, and create prtg graphs using PowerShell (and/or any other scripting language).  Literally, any values you can return from your scripts, can be put into PRTG and have gauges and graphs created from them.
