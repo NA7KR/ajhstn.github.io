@@ -1,19 +1,22 @@
 ---
 layout: post
 ---
-This post talks about automating the deployment of Hyper-V Guest Windows servers using PowerShell.  This is part1 of a two part series.  
+This post talks about automating the deployment of Hyper-V Guest Windows servers using PowerShell.  This is part1 of a two part series.
+
 1. Preparing the base Windows Image (this post)
-1. Deploying New Virtual Machines (coming soon)
+2. Deploying New Virtual Machines (coming soon)
 
 If your in a large enterprise you may already use tools like SCCM or SCVMM, or any other plethora of deployment tools, but if not, then read along and maybe this could help you.  In fact this same method can be used with SCCM and Windows Deployment tools.
 
 My workflow is across 2 phases.  In this post we will cover the first phase.
+
 1. Preparing our base Windows Image (VHDX File)
   * Extracting the wim
   * Patching the wim
   * Converting it to VHDX
-1. Creating our Virtual Machine
+2. Creating our Virtual Machine
   * PowerShell script to create the VM
+
 The PowerShell script has an option GUI front end.
 ![CloudBuilder GUI](img/cloudbuilder.PNG)
 
@@ -88,6 +91,6 @@ At this point, after running the Convert-WindowsImage script, you will now have 
 
 This is a ready to go pristine, never been booted, Windows 2012 R2 template/base/what ever you wish to call it. You now simply copy this and use it to create Virtual Machines from.
 
-The full script containing all the above code is [here](/ps/Build-BaseImage.ps1).
+The full script containing all the above code is [here](https://github.com/ajhstn/ajhstn.github.io/blob/master/ps/Build-BaseImage.ps1).
 
 In the next part of this series we will be using the above vhdx file to automate the deployment of Hyper-V VM Servers.
