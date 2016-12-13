@@ -98,7 +98,7 @@ $html = $html.Replace('#summary', $summary)
 $html = $html.Replace('#body', $body)
 $html = $html.Replace('#file', $file)
 
-#hillsong-com.mail.protection.outlook.com
+
 Send-MailMessage -SmtpServer 'smtp.domain.com' -From 'Security Auditing <no-reply@domain.com>' -to 'securityauditing@domain.com' -Subject $subject -BodyAsHtml -Body $html
 
 }
